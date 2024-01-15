@@ -18,9 +18,9 @@ locals {
   lambda_runtime                = "python3.10"
   lambda_root                   = "${path.module}/python"
   lambda_layer_root             = "${local.lambda_root}/layer"
-  lambda_layer_requirements_txt = "${local.lambda_layer_root}/requirements.txt"
-  lambda_layer_lib_root = "${local.lambda_layer_root}/python"
-  lambda_function_root  = "${local.lambda_root}/src"
+  lambda_layer_lib_root         = "${local.lambda_layer_root}/python"
+  lambda_function_root          = "${local.lambda_root}/src"
+  lambda_layer_requirements_txt = "${local.lambda_function_root}/requirements.txt"
 }
 
 resource "aws_iam_role" "lambda" {
