@@ -16,7 +16,7 @@ data "aws_partition" "current" {}
 locals {
   lambda_function_name          = "BatteryHealthParser"
   lambda_runtime                = "python3.10"
-  lambda_root                   = "${path.module}/python"
+  lambda_root                   = "${path.module}/lambda"
   lambda_layer_root             = "${local.lambda_root}/layer"
   lambda_layer_lib_root         = "${local.lambda_layer_root}/python"
   lambda_function_root          = "${local.lambda_root}/src"

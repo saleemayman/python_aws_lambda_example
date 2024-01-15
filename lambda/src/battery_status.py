@@ -1,4 +1,3 @@
-import json
 import logging
 from typing import Any, Dict
 
@@ -18,18 +17,18 @@ def lambda_handler(event: Dict[str, Any], context: LambdaContext) -> Dict[str, A
 
         response = {
             "statusCode": 200,
-            "body": json.dumps({"result": result.model_dump_json()}),
+            "body": {"result": result.model_dump_json()},
         }
     except ValidationError as e:
         logging.error(log("Error parsing and processing input", error=str(e)))
         response = {
             "statusCode": 400,
-            "body": json.dumps({"error": "Error parsing input", "details": str(e)}),
+            "body": {"error": "Error parsing input", "details": str(e)},
         }
     except Exception as e:
         response = {
             "statusCode": 500,
-            "body": json.dumps({"error": "Unexpected server error", "details": str(e)}),
+            "body": {"error": "Unexpected server error", "details": str(e)},
         }
 
     return response
