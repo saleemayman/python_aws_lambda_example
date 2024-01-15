@@ -12,8 +12,14 @@ Pre-requisites:
 - Terraform
 - AWS CLI
 
+Export your AWS credentials as environment variables:
+```
+export AWS_ACCESS_KEY_ID="aws_access_key_id_value"
+export AWS_SECRET_ACCESS_KEY="aws_secret_access_key_value"
+```
 
 From the project root folder run:
+
 ```
 terraform init & terraform apply
 ```
